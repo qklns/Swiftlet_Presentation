@@ -1,0 +1,36 @@
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="presentation">
+<!--SLIDES-->
+</div><!-- end .presentation -->
+
+<!-- NAV -->
+<button class="nav-btn nav-prev" onclick="changeSlide(-1)">&#8592;</button>
+<button class="nav-btn nav-next" onclick="changeSlide(1)">&#8594;</button>
+<div class="slide-counter" id="slideCounter">1 / 1</div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const TOTAL = slides.length;
+  let current = 0;
+
+  function renderSlide() {
+    slides.forEach((el, i) => el.classList.toggle('active', i === current));
+    document.getElementById('slideCounter').textContent = (current + 1) + ' / ' + TOTAL;
+    document.getElementById('progressBar').style.width = ((current + 1) / TOTAL * 100) + '%';
+  }
+
+  function changeSlide(dir) {
+    const next = current + dir;
+    if (next < 0 || next >= TOTAL) return;
+    current = next;
+    renderSlide();
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   changeSlide(-1);
+  });
+
+  renderSlide();
+</script>
