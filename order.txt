@@ -3,11 +3,11 @@ why
 species
 value-chain
 exporters
+thailand-industry
 consumers
-echolocation
 harvest-calendar
-economics
 environmental-conditions
+echolocation
 building-anatomy
 harvest-methods
 conflict
