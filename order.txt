@@ -1,5 +1,13 @@
 cover
 why
+history.html
+general-info.html
+anatomy.html
+diet.html
+habitat.html
+nesting-behavior.html
+breeding-cycle.html
+harvest-cycle.html
 species
 value-chain
 exporters
